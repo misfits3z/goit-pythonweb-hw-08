@@ -14,7 +14,7 @@ class Contact(Base):
     last_name: Mapped[str] = mapped_column(String(50), unique=True)
     email: Mapped[str] = mapped_column(String(255), unique=True)
     phone_number: Mapped[str] = mapped_column(String(20), unique=True)
-    birth_date: Mapped[Date]
+    birth_date: Mapped[Date] = mapped_column(Date, unique=True)
     note: Mapped[str] =  mapped_column(Text, nullable=True)
     created_at: Mapped[DateTime] = mapped_column(
         "created_at", DateTime, default=func.now()
