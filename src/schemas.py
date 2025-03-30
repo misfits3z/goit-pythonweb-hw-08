@@ -1,14 +1,14 @@
 from datetime import date, datetime
 from typing import  Optional
-from pydantic import BaseModel, Field, EmailStr, constr, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict
 
 
 # Модель для створення контакту
 class ContactCreate(BaseModel):
     first_name: str = Field(..., max_length=50)
     last_name: str = Field(..., max_length=50)
-    email: EmailStr
-    phone_number: str = constr(regex=r"^\+?[1-9]\d{1,14}$")  
+    email: str = Field(max_length=50)
+    phone_number: str = Field(max_length=50)
     birth_date: date
     note: Optional[str] = Field(max_length=250)
 
@@ -21,7 +21,7 @@ class ContactResponse(ContactCreate):
     id: int
     first_name: str
     last_name: str
-    email: EmailStr
+    email: str
     phone_number: str
     birth_date: datetime
     note: str
