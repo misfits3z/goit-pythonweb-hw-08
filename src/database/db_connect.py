@@ -12,20 +12,6 @@ from sqlalchemy.ext.asyncio import (
 from src.conf.config import config
 
 
-# DATABASE_URL = "postgresql://postgres:goit@localhost:5432/postgres"
-
-# # Створення з'єднання з базою даних
-# engine = create_engine(DATABASE_URL)
-# SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-# # Виконання запиту
-# try:
-#     with engine.connect() as connection:
-#         result = connection.execute(text("SELECT 1"))
-#         print(result.fetchone())  # Це виведе (1,)
-# except Exception as e:
-#     print("Error connecting to database:", e)
-
 
 class DatabaseSessionManager:
     def __init__(self, url: str):
