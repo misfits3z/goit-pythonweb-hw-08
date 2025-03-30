@@ -1,5 +1,3 @@
-# from sqlalchemy import create_engine
-# from sqlalchemy.orm import sessionmaker
 import contextlib
 
 from sqlalchemy.exc import SQLAlchemyError
@@ -10,7 +8,6 @@ from sqlalchemy.ext.asyncio import (
 )
 
 from src.conf.config import config
-
 
 
 class DatabaseSessionManager:
