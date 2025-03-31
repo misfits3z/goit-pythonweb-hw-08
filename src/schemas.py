@@ -24,7 +24,7 @@ class ContactResponse(ContactCreate):
     email: str
     phone_number: str
     birth_date: datetime
-    note: str
+    note: Optional[str] = None
     created_at: datetime | None  
     updated_at: Optional[
         datetime

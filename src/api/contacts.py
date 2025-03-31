@@ -7,7 +7,10 @@ from src.database.db import get_db
 from src.schemas import ContactCreate, ContactResponse
 from services.contacts import ContactService
 
+
 router = APIRouter(prefix="/contacts", tags=["contacts"])
+
+
 
 
 @router.get("/", response_model=List[ContactResponse])
@@ -59,3 +62,6 @@ async def remove_contact(contact_id: int, db: AsyncSession = Depends(get_db)):
             status_code=status.HTTP_404_NOT_FOUND, detail="Contact not found"
         )
     return contact
+
+
+
